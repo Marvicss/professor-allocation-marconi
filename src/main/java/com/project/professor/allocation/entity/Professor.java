@@ -11,7 +11,20 @@ public class Professor {
     private String name;
     @Column(unique = true, nullable = false)
     private String cpf;
+    @Column(name = "department_id", nullable = false)
     private Long departmentId;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "department_id", nullable = false, insertable = false, updatable = false)
+    private Department department;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     public Long getId() {
         return id;
