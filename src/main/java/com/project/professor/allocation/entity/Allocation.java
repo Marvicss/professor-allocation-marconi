@@ -27,11 +27,11 @@ public class Allocation {
     private Long professorId;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "course_id", nullable = false, updatable = false )
+    @JoinColumn(name = "course_id", nullable = false, updatable = false , insertable = false)
     private Course course;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "professor_id", nullable = false, updatable = false )
+    @JoinColumn(name = "professor_id", nullable = false, updatable = false, insertable = false )
     private Professor professor;
 
     public Long getId() {
@@ -96,5 +96,20 @@ public class Allocation {
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Allocation{" +
+                "id=" + id +
+                ", day=" + day +
+                ", start=" + start +
+                ", end=" + end +
+                ", courseId=" + courseId +
+                ", professorId=" + professorId +
+                ", course=" + course +
+                ", professor=" + professor +
+                '}';
     }
 }
