@@ -10,5 +10,8 @@ import java.util.List;
 @Repository
 public interface ProfessorRepository extends JpaRepository<Professor, Long> {
 
-    List<Allocation>  (Long ProfessorId);
+    List<Professor> findByDepartmentId  (Long ProfessorId);
+
+    List<Professor> findByNameContaining (String partName);
+
 }
