@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface AllocationRepository extends JpaRepository<Allocation, Long> {
 
-    List <Allocation> findByProfessorId (String partName);
+    List <Allocation> findByProfessorId (Long partName);
 
-    List<Allocation> findByCourseId (String courseId);
+    List<Allocation> findByCourseId (Long courseId);
 
 
 }
