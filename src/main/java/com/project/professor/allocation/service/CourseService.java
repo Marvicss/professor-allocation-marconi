@@ -28,10 +28,20 @@ public class CourseService {
 
     }
 
-    public List<Course> findAll()
+    public List<Course> findAll(String name)
     {
-        List<Course> courses = courseRepository.findAll();
-        return courses;
+        if ( name != null){
+
+            List<Course> courses = courseRepository.findAll();
+            return courses;
+        }
+
+        else{
+            List<Course> courses = courseRepository.findByNameContaining(name);
+            return courses;
+        }
+
+
     }
 
     public Course create(Course course)
